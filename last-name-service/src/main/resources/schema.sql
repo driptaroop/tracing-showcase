@@ -1,0 +1,1 @@
+create table last_names (id int primary key auto_increment, lastname text);

@@ -1,0 +1,29 @@
+version: "3.6"
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "6831:6831/udp"
+      - "16686:16686"
+      - "14250:14250"
+
+  first-name-service:
+    build:
+      context: .
+      dockerfile: ./first-name-service/Dockerfile
+    ports:
+      - "9091:9091"
+
+  last-name-service:
+    build:
+      context: .
+      dockerfile: ./last-name-service/Dockerfile
+    ports:
+      - "9092:9092"
+
+  name-generator:
+    build:
+      context: .
+      dockerfile: ./name-generator/Dockerfile
+    ports:
+      - "9090:9090"

@@ -2,6 +2,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+  application:
+    name: last-name-service
+  datasource:
+    url: jdbc:tracing:h2:mem:last_name?traceWithActiveSpanOnly=true
+    driver-class-name: io.opentracing.contrib.jdbc.TracingDriver
 server:
   port: 9092
 

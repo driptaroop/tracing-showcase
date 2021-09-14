@@ -2,5 +2,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+  application:
+    name: first-name-service
 server:
   port: 9091

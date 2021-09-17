@@ -9,4 +9,7 @@ spring:
     driver-class-name: io.opentracing.contrib.jdbc.TracingDriver
 server:
   port: 9092
-
+opentracing:
+  jaeger:
+    udp-sender:
+      host: jaeger

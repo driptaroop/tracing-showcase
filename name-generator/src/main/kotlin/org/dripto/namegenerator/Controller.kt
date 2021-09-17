@@ -10,8 +10,8 @@ class Controller(private val restTemplate: RestTemplate){
     @GetMapping("/name/random")
     fun random(): FullName = FullName(
         name = sequenceOf(
-            restTemplate.getForObject<FirstName>("http://localhost:9091/firstname/random").firstname,
-            restTemplate.getForObject<LastName>("http://localhost:9092/lastname/random").lastname
+            restTemplate.getForObject<FirstName>("http://first-name-service:9091/firstname/random").firstname,
+            restTemplate.getForObject<LastName>("http://last-name-service:9092/lastname/random").lastname
         )
             .joinToString(separator = " ") { it.lowercase().replaceFirstChar(Char::uppercase) }
     )
